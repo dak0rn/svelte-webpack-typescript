@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const preprocess = require('svelte-preprocess');
 
 const extensions = ['.mjs', '.js', '.json', '.svelte', '.html', '.ts'];
 const mainFields = ['svelte', 'module', 'browser', 'main'];
@@ -22,13 +21,7 @@ module.exports = {
                 exclude: [],
                 use: {
                     loader: 'svelte-loader',
-                    options: {
-                        preprocess: preprocess({
-                            typescript: {
-                                tsconfigFile: path.resolve(__dirname, 'tsconfig.json')
-                            }
-                        })
-                    }
+                    options: require('./svelte.config')
                 }
             }
         ]

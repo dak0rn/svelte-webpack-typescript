@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import { onMount, onDestroy } from 'svelte';
 
     let iid: any | null = null;
